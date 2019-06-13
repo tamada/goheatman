@@ -15,14 +15,13 @@ FORMAT: 1A
 + Parameters
     + pixel (number,optional) - specifies pixel size of each cell.
         * Default: 5
-    + color (string,optional) - specifies color of creating heatmap.
-        * Default: default
-    + header (string,optional) - specifies header type of gives CSV data by form param.
-        * Available: both, column, row, and no.
+    + color: default, gray (enum[string],optional) - specifies color of creating heatmap.
+        + Default: default
+    + header: both, column, row, no (enum[string],optional) - specifies header type of gives CSV data by form param.
         * Default: no
     + additional_line_gap (number,optional) -  specifies the gap of additional line for cells. If the value was less equals than 0, no additional lines were drawn.
         * Default: 0
-        
+
 + Response 201
     + Attributes (heatmap)
 
@@ -38,6 +37,10 @@ FORMAT: 1A
 
 ## get information of a heatmap [GET]
 
+* This endpoint throws errors by the following case:
+    * The specified heatmap of `id` was not found, or has been expired. (404)
+    * The format of `id` was invalid. (400)
+
 + Parameters
     * `id` (number,required) - specifies id number for identifying the created heatmap.
 
@@ -45,17 +48,19 @@ FORMAT: 1A
     + Attributes (heatmap)
 
 + Response 404 (application/json)
-    + Attributes (error_not_found)
+    + Attributes (error)
 
 + Response 400 (application/json)
-    + Attributes (error_invalid)
+    + Attributes (error)
 
 
 # Heatmap image [/api/heatmap/{id}/raw]
 
 ## get heatmap image of specified heatmap [GET]
 
-Returns heatmap image.
+* This endpoint throws errors by the following case:
+    * The specified heatmap of `id` was not found, or has been expired. (404)
+    * The format of `id` was invalid. (400)
 
 + Parameters
     + `id` (number,required) - specifies id number for identifying the created heatmap.
@@ -63,47 +68,46 @@ Returns heatmap image.
 + Response 200 (image/png)
 
 + Response 404 (application/json)
-    + Attributes (error_not_found)
+    + Attributes (error)
 
 + Response 400 (application/json)
-    + Attributes (error_invalid)
+    + Attributes (error)
 
 # Gives data for heatmap  [/api/heatmap/{id}/data]
 
 ## get data for heatmap [GET]
 
-* Returns csv data for heatmap.
-* If heatmap for identified by `{id}` was not found, or has been expired, this service respond `404`
-* 
+* This endpoint throws errors by the following case:
+    * The specified heatmap of `id` was not found, or has been expired. (404)
+    * The format of `id` was invalid. (400)
 
 + Parameters
     + `id` (number,required) - specifies id number for identifying the created heatmap.
 
 + Response 200 (application/csv)
 
-+ Response 404 (application/json) 
-    + Attributes (error_not_found)
++ Response 404 (application/json)
+    + Attributes (error)
 
 + Response 400 (application/json)
-    + Attributes (error_invalid)
+    + Attributes (error)
 
 # Data structure
 
 ## parameter (object)
 
-+ Attributes
-  + color: default (string) - heatmap color type. (available: "default" or "gray")
-  + pixel: 15 (number) - the pixel size of each cell. (default: 15)
-  + header: both (string) - header type of given csv file. (available: "both", "column", "row", and "no". default: "no")
-  + additional_line_gap: 0 (number) - the gap of additional lines per cells.
++ color: default, gray (enum[string]) - heatmap color type.
++ pixel: 15 (number) - the pixel size of each cell, this value must be greater equals than 1.
++ header: both, column, row, no (enum[string]) - header type of given csv file.
++ additional_line_gap: 0 (number) - the gap of additional lines per cells.  If the value is negative value or 0, no additional lines are drawn.
 
 ## heatmap (object)
 
 + id: 123456 (number) - id for heatmap
 + expired: `2019-06-20T12:00:34` (string) - expire date of the heatmap
-+ parameter: (parameter) - parameter for creating heatmp.
 + data_url: `/api/heatmap/123456/data` (string) - url of data for heatmap.
 + image_url: `/api/heatmap/123456/raw` (string) - url of heatmap image.
++ parameter: (parameter)
 
 ## heatmaps (object)
 
@@ -112,18 +116,9 @@ Returns heatmap image.
 
 ## errors (object)
 
-+ errors (array)
++ errors (array,fixed-type)
     + (error)
-    
+
 ## error
 
 + message: content (string) - error message.
-
-## `error_not_found`
-
-+ message: {id}: not found, or has been expired (string) - error message
-
-## `error_invalid`
-
-+ message: {id}: invalid id format (string) - error message
-
