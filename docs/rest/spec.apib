@@ -10,7 +10,8 @@ FORMAT: 1A
     * The user gives the pixel size `pixel` was less equal than 0. (400)
     * The user gives `color` to unknown color type (400)
     * The user gives `header` to unknown header type (400).
-    * The user gives `additional_line_gap` on not integer value.
+    * The user gives `additional_line_gap` on not integer value. (400)
+    * The value in a cell of given csv data is out of range [0, 1] (400)
 
 + Parameters
     + pixel (number,optional) - specifies pixel size of each cell.
