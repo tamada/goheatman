@@ -12,6 +12,9 @@ Version represents the version of the product.
 */
 const Version = "1.0.0"
 
+/*
+ParseHeaderModel returns the value of HeaderModel from given model string.
+*/
 func ParseHeaderModel(model string) (heatman.HeaderModel, error) {
 	switch strings.ToLower(model) {
 	case "both":
@@ -26,6 +29,10 @@ func ParseHeaderModel(model string) (heatman.HeaderModel, error) {
 	return heatman.InvalidHeaderModel, fmt.Errorf("%s: unknown header model", model)
 }
 
+/*
+ParseColorType finds an instance of HeatmapConverter from given string.
+Available names are: default, and gray.
+*/
 func ParseColorType(colorType string) (heatman.HeatmapConverter, error) {
 	switch strings.ToLower(colorType) {
 	case "default":

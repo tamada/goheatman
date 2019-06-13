@@ -60,19 +60,6 @@ func (gc *GraymapConverter) Convert(value float64) color.Color {
 	return color.RGBA{R: gray, G: gray, B: gray, A: 0xff}
 }
 
-/*
-FindHeatmapConverter finds an instance of HeatmapConverter from given string.
-Available names are: default, and gray.
-*/
-func FindHeatmapConverter(name string) (HeatmapConverter, error){
-	switch(name) {
-	case "default":
-		return &DefaultHeatmapConverter{}, nil
-	case "gray":
-		return &GraymapConverter{}, nil
-	}
-	return nil, fmt.Errorf("%s: unknown heatmap type", name)
-}
 
 /*
 ColorModel shows the color model of the heat map.
