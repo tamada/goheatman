@@ -1,0 +1,16 @@
+language: go
+
+go:
+    - 1.12
+
+env:
+    global:
+        - TZ=Asia/Tokyo
+        - GO111MODULE=on
+
+before_script:
+    - go get github.com/mattn/goveralls
+
+script:
+    - make test build
+    - $GOPATH/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
