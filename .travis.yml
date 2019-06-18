@@ -5,9 +5,8 @@ go:
 
 env:
     global:
-        - TZ=Asia/Tokyo
-        - GO111MODULE=on
         - secure: "agzrtJGIUWIy5DcyheOqX4Rvz0FBvM+YmJy9iJlNL5yY5c7CKzaiA5lSGYAeQe7zSUQ5FShKIJqJ24yJQNYEi+oiWqKZAp2Na54vn2zNGxJ3zTMQiwBx5rZLYkR2hB3NFBMHo2U27La94dnVytp50q391CdJELHYOMUXKsaAgb4dkZXiMAzUW/lvAK4O8Q8mxGQuChHpdIjRY5nR+ptmTJJhLblUaOM6Mk+94goH4Dfn8zRrY6vnNSF6oUzWyGDnZcZYaMAB1jyEfKlPPD9ejuBikM636tYt0NK/xByHD9y6OOUWd8WPphTYomgFv5TmBJdTornOAwe1PkJDpVITpHFzgrJRVUCnM/P+xg3SzOskoIdefNJlfIHV/rAu242kR7zOiFPm82qAeEq8utJEcw6AYnBRT416MgwpvQ3FrDJd97k/UfUeLfVECKQf+UGmS4jDnwPPg/KFQw1EOwqJezAbV80xjiV0qLL7NHkDcbg279eqSD/jA494plgvzOmURWRmBOGPOT6FSXn92O3XIb905Us81+u6e9xJ20FiehVXtILDGKiinpGWKwxdHL7yC8k0wD0cM1LKvcsnCsntgjJDLB388PaMMZp4N9k2LcxRcsR3sx4fEPGYMubgSROIogNboqRxDi+KdB45rgPB4cj3ZfXsQ8WOAkqYZZSIHdo="
+        - GO111MODULE=on
 
 before_script:
     - go get github.com/mattn/goveralls
