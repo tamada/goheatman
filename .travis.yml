@@ -7,6 +7,8 @@ env:
     global:
         - TZ=Asia/Tokyo
         - GO111MODULE=on
+        - secure: "PKyE+o/6AXK91oiRLTfWUwmv7beAJNaFMu94vv/gM8XXS00W88EI07yyt5DunF17iN3Q/6ktRq21amqhprG2147JxbZwS58AOunSrBHmkn32LXC/iZaTzp/6pe9gYZwB2y9MF53cRckHoKhNlOZE8r+TXqJ8rBb9uUTbVuD7WI8CthecpMN6AVDoouOrukbB4W3MV2r4pU7j+aNkYxkqcZeM8gepCCYSliEYdnFxQnHz86VPqBJakr20AKETK7eGOdkhmV+d+i3C9Qnzq52uvsnRoRRvm1NqJiJVJgrRxNpi6gj8/GQouCfjf0l1Cf5wT8S13Z8JbnLX6NIueK0/uZkz0kdb+gvEDc8EXQbxRsGU3REAERpxZdIF0DnTqcvKHFbnA2XfTJu9SgynDM+R57zFmrV16Aj6nLcjNGRxBjsOiIeKFAtA+SWnwFpKzCpck2VAFj0cFLeidObJjFZKxFZV49BHJd7UXsz0dr5WDdhMAHbBRVaAXhX63zVRPSlloUp1sCrlsR0vHrEydrOoyh0hIfsbz+B9FSlVA52s2Qg5oRsskBJEgm3dXMYALF108rxiPtw+57HNga+XsP0St4OBVCxahFyVN7rkxkZOCJ2FYE//eaMTyB59QzFYPpB6chroom8YZU1uopmlh2sxHhAGaemml4Toj8gIfFRzZmY="
+
 
 before_script:
     - go get github.com/mattn/goveralls
