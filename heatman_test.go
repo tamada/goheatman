@@ -8,13 +8,21 @@ import (
 	"testing"
 )
 
+func TestScaler(t *testing.T) {
+	var context = NewContext(1, 0)
+	var scaler = ScalerImage(context)
+	if scaler.width != 255 && scaler.height != 10 {
+		t.Errorf("size of scaler did not match")
+	}
+}
+
 func TestCsvToTable(t *testing.T) {
 	var csvData = `,c1,c2,c3,c4
 r1,0.0,0.1,0.2,0.3
-r2,,0.2,0.3,0.4
-r3,,,0.4,0.5
-r4,,,,0.6
-r5,,,,0.7`
+r2,,0.4,0.5,0.6
+r3,,,0.7,0.8
+r4,,,,0.9
+r5,,,,1.0`
 	var context = NewContext(3, 0)
 	context.WithHeader = RowColumnHeader
 	var table = NewTable(csv.NewReader(strings.NewReader(csvData)), context)
@@ -37,9 +45,20 @@ func TestHSBtoRGB(t *testing.T) {
 		wontG    uint32
 		wontB    uint32
 	}{
-		{&HSB{0.0, 1.0, 1.0}, 255, 0, 0},
-		{&HSB{0.333334, 1.0, 1.0}, 0, 255, 0},
-		{&HSB{0.666667, 1.0, 1.0}, 0, 0, 255},
+		{&HSB{0.000000, 0.0, 1.000}, 255, 255, 255},
+		{&HSB{0.000000, 0.0, 0.502}, 128, 128, 128},
+		{&HSB{0.000000, 1.0, 1.000}, 255, 0, 0},
+		{&HSB{0.000000, 1.0, 0.502}, 128, 0, 0},
+		{&HSB{0.166667, 1.0, 1.000}, 255, 255, 0},
+		{&HSB{0.166667, 1.0, 0.502}, 128, 128, 0},
+		{&HSB{0.333334, 1.0, 1.000}, 0, 255, 0},
+		{&HSB{0.333334, 1.0, 0.502}, 0, 128, 0},
+		{&HSB{0.500000, 1.0, 1.000}, 0, 255, 255},
+		{&HSB{0.500000, 1.0, 0.502}, 0, 128, 128},
+		{&HSB{0.666667, 1.0, 1.000}, 0, 0, 255},
+		{&HSB{0.666667, 1.0, 0.502}, 0, 0, 128},
+		{&HSB{0.833333, 1.0, 1.000}, 255, 0, 255},
+		{&HSB{0.833333, 1.0, 0.502}, 128, 0, 128},
 	}
 	for _, tc := range testcases {
 		var r, g, b, a = tc.givesHSB.RGBA()
@@ -55,7 +74,7 @@ func TestCreateHSB(t *testing.T) {
 		givesValue float64
 		wontHSB    *HSB
 	}{
-		{1.0, &HSB{0.0, 1.0, 1.0}},
+		{1.0, &HSB{0.000000, 1.0, 1.0}},
 		{0.0, &HSB{0.666667, 1.0, 1.0}},
 		{0.5, &HSB{0.333334, 1.0, 1.0}},
 	}
@@ -73,7 +92,7 @@ func TestHSBString(t *testing.T) {
 		hsb *HSB
 		str string
 	}{
-		{&HSB{0.0, 1.0, 1.0}, "hue: 0.000000, saturation: 1.000000, brightness: 1.000000"},
+		{&HSB{0.000000, 1.0, 1.0}, "hue: 0.000000, saturation: 1.000000, brightness: 1.000000"},
 		{&HSB{0.666667, 1.0, 1.0}, "hue: 0.666667, saturation: 1.000000, brightness: 1.000000"},
 		{&HSB{0.333334, 1.0, 1.0}, "hue: 0.333334, saturation: 1.000000, brightness: 1.000000"},
 	}

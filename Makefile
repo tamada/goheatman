@@ -21,7 +21,7 @@ update_version:
 	@echo "Replace version to \"${VERSION}\""
 
 test: setup
-	$(GO) test -covermode=count -coverprofile=coverage.out $$(go list ./... | grep -v vendor)
+	$(GO) test -covermode=count -coverprofile=coverage.out $$(go list ./...)
 
 build: setup
 	cd cmd/heatman; $(GO) build -o $(NAME) -v
