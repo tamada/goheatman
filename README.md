@@ -56,7 +56,7 @@ The one cell in csv is shown in 15-pixel square, and the auxiliary lines are dra
 
 The image is gray-scaled heatmap.
 
-![heatman3.png](https://github.com/tamada/goheatman/blob/master/testdata/heatman2.png)
+![heatman3.png](https://github.com/tamada/goheatman/blob/master/testdata/heatman3.png)
 
 #### heatman_scaler.png
 
