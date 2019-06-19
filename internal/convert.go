@@ -35,7 +35,7 @@ Available names are: default, and gray.
 */
 func ParseColorType(colorType string) (heatman.HeatmapConverter, error) {
 	switch strings.ToLower(colorType) {
-	case "default":
+	case "color":
 		return &heatman.DefaultHeatmapConverter{}, nil
 	case "gray":
 		return &heatman.GraymapConverter{}, nil
