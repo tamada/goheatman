@@ -64,3 +64,19 @@ This is generated scaler image.
 The most right side shows 1.0, and the most left side represents 0.0.
 
 ![heatman_scaler.png](https://github.com/tamada/goheatman/blob/master/testdata/heatman_scaler.png)
+
+## Install
+
+### Go lang
+
+```sh
+$ go get github.com/tamada/goheatman
+```
+
+### Homebrew
+
+```sh
+$ brew tap tamada/brew
+$ brew install heatman
+```
+
