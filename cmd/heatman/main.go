@@ -7,7 +7,7 @@ import (
 	"image/png"
 	"os"
 
-	flag "github.com/ogier/pflag"
+	flag "github.com/spf13/pflag"
 	heatman "github.com/tamada/goheatman"
 	"github.com/tamada/goheatman/internal"
 )
