@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://tamada.github.io/heatman/install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tamada.github.io/heatman/usage/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tamada.github.io/heatman/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tamada.github.io/heatman/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tamada.github.io/heatman/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tamada.github.io/heatman/tags/</loc>
+  </url>
+  
+</urlset>
