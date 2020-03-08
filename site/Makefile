@@ -3,7 +3,7 @@ DOCKER_IMAGE_NAME := "www9heatman"
 DOCKER_IMAGE := "jojomi/hugo:latest"
 
 define _docker_run
-	docker run --rm --name $1 $2 --interactive --volume ${PWD}:/src --volume ${PWD}/public:/output --workdir /src --entrypoint hugo $(DOCKER_IMAGE) $3
+	docker run --rm --name $1 $2 --interactive --volume ${PWD}:/src --volume ${PWD}/../docs:/output --workdir /src --entrypoint hugo $(DOCKER_IMAGE) --destination /output -v $3
 endef
 
 build:
