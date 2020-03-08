@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>:house: Home on heatman</title>
+    <link>https://tamada.github.io/heatman/</link>
+    <description>Recent content in :house: Home on heatman</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tamada.github.io/heatman/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>:anchor: Install</title>
+      <link>https://tamada.github.io/heatman/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tamada.github.io/heatman/install/</guid>
+      <description>🍺 Homebrew $ brew tap tamada/brew $ brew install heatman Go lang $ go get github.com/tamada/goheatman 🛠 Build from source codes $ git clone https://github.com/tamada/goheatman.git $ cd goheatman $ make </description>
+    </item>
+    
+    <item>
+      <title>:fork_and_knife: Usage</title>
+      <link>https://tamada.github.io/heatman/usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tamada.github.io/heatman/usage/</guid>
+      <description>📎 CLI $ heatman -h both testdata/sample.csv # generate heatman.png. $ heatman -H # print the following help message. heatman [OPTIONS] [CSVFILE] OPTIONS -a, --additional-line-gap &amp;lt;GAP&amp;gt; specifies the gap of assistant lines per cells. if GAP is less equals than 0, no assistant lines are drawn. -c, --color &amp;lt;TYPE&amp;gt; specifies heatmap color type (color or gray), default: color. -d, --dest &amp;lt;DEST&amp;gt; specifies the destination file. -h, --headers &amp;lt;HEADER&amp;gt; specifies header model (both, row, column, or no), default: no.</description>
+    </item>
+    
+    <item>
+      <title>:smile: About</title>
+      <link>https://tamada.github.io/heatman/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tamada.github.io/heatman/about/</guid>
+      <description>📜 License WTFPL
+
+Developers  Haruaki Tamada  Github    </description>
+    </item>
+    
+  </channel>
+</rss>
